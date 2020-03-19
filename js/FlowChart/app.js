@@ -803,48 +803,6 @@ function deepCopy(ele) {
     }
 }
 
-function deleteLinkById(numId) {
-    let cacheLinks = deepCopy(flowData.linkDataArray)
-    let arrPro = cacheLinks.filter(item => {
-        if (item.from === numId || item.to === numId) {
-            return false
-        } else {
-            return true
-        }
-    })
-    flowData.linkDataArray = arrPro
-}
-
-function deleteLinksByIds(arrIds) {
-    arrIds.forEach(id => {
-        deleteLinkById(id)
-    })
-}
-
-function deleteNodeById(numId) {
-    let cacheNodes = deepCopy(flowData.nodeDataArray)
-    let arrPro = cacheNodes.filter(item => {
-        if (item.key === numId) {
-            return false
-        } else {
-            return true
-        }
-    })
-    flowData.nodeDataArray = arrPro
-}
-
-function deleteLinkByFromTo(numFrom, numTo) {
-    let cacheLinks = deepCopy(flowData.linkDataArray)
-    let arrPro = cacheLinks.filter(item => {
-        if (item.from === numFrom && item.to === numTo) {
-            return false
-        } else {
-            return true
-        }
-    })
-    flowData.linkDataArray = arrPro
-}
-
 /** Update view-model by flowData */
 function Render() {
     let strJson = JSON.stringify(flowData)
@@ -1130,15 +1088,7 @@ function deleteNodes() {
         }
     }
     // 删除节点及其对应连接线
-    arrSelsNode.forEach(id => {
-        deleteNodeById(id)
-    })
-    deleteLinksByIds(arrSelsNode)
-    // 删除连线
-    arrSelsLink.forEach((item) => {
-        deleteLinkByFromTo(item.from, item.to)
-    })
-    Render()
+    myDiagram.commandHandler.deleteSelection()
 }
 
 /**
