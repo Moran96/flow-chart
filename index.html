@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flowchart</title>
+    <meta name="description" content="Interactive flowchart diagram implemented by GoJS in JavaScript for HTML." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./css/latin.css">
+    <link rel="stylesheet" href="./css/FlowChart.css">
+    <link rel="stylesheet" href="./css/icon.css">
+
+    <script src="./js/gojs/go.js"></script>
+    <script src="./js/gojs/Figures.js"></script>
+    <script src="./js/jquery2.1.0.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/FlowChart/app.js"></script>
+</head>
+
+<body>
+    <div id="sample">
+        <div id="my-wrap">
+            <div class="palette-group">
+                <div class="palette-item palette-cmd">
+                    <div class="palette-title"><p>指令</p></div>
+                    <div id="palette-cmd"></div>
+                </div>
+                <div class="palette-item palette-flow">
+                    <div class="palette-title"><p>流程</p></div>
+                    <div id="palette-flow"></div>
+                </div>
+            </div>
+            <div class="diagram-wrap">
+                <div id="myDiagramDiv"></div>
+            </div>
+        </div>
+        <!-- <div style="text-align: center;">version 1.0.19</div> -->
+        <div class="btn-bar">
+            <button class="fl-button" onclick="toggleEditMode(true)">进入编辑模式</button>
+            <button class="fl-button" onclick="toggleEditMode(false)">退出编辑模式</button>
+            <button id="btn-del" class="fl-button btn-del" onclick="deleteNodes()">删除</button>
+            <button id="btn-save" class="fl-button btn-save" onclick="saveGraphJson()">保存</button>
+            <input id="SelectAll" type="button" onclick="myDiagram.commandHandler.selectAll()" value="Select All" />
+            <input id="Delete" type="button" onclick="myDiagram.commandHandler.Delete()" value="delete All" />
+        </div>
+        <div class="name-edit">
+            <div class="icon-btn icon-back" onclick="backParentFlow()"><img src="./image/ic_flowchart_back.png" alt=""></div>
+            <div id="flow-title" class="name"></div>
+            <div class="icon-btn icon-edit" onclick="onClickEditName()"><img src="./image/ic_flowchart_edit.png" alt=""></div>
+        </div>
+        <div class="wrap-btnarea">
+            <div>
+                <textarea name="" id="terminal" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <div id="wrap">
+        <div class="popup-dialog">
+            <div class="select-area">
+                <p style="font-size:16px">选择数据</p>
+                <select name="info" id="my-select">
+                    <!-- <option selected="selected" disabled="disabled"  style='display: none' value=''></option>
+                    <option value="guangzhou">guangzhou</option>
+                    <option value="shanghai">shanghai</option>
+                    <option value="beijing">beijing</option> -->
+                </select>
+            </div>
+            <div class="btn-area">
+                <div class="btn-can" onclick="onClickBtnCan()"><p>取消</p></div>
+                <div class="btn-con" onclick="onClickBtnCon()"><p>确定</p></div>
+            </div>
+        </div>
+    </div>
+    <style>
+    #terminal {
+        background-color: #efefef;
+        display: none;
+    }
+    </style>
+</body>
+
+</html>

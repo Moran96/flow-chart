@@ -1,0 +1,182 @@
+body {
+  margin: 0; }
+
+#my-wrap {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #F5F5F9;
+  background-color: #F5F5F9;
+  font-size: 0; }
+  #my-wrap .palette-group {
+    box-sizing: content-box;
+    width: 200px;
+    margin-right: 2px;
+    border-right: 1px solid #F3EFF7;
+    background-color: #F3EFF7; }
+    #my-wrap .palette-group .palette-item {
+      width: 100%; }
+      #my-wrap .palette-group .palette-item .palette-title {
+        width: 100%;
+        height: 22px; }
+        #my-wrap .palette-group .palette-item .palette-title p {
+          margin: 0;
+          font-size: 14px;
+          color: rgba(67, 66, 93, 0.5);
+          text-indent: 12px;
+          font-family: Noto Sans S Chinese;
+          font-weight: bold;
+          line-height: 22px; }
+    #my-wrap .palette-group .palette-cmd {
+      height: 370px; }
+    #my-wrap .palette-group .palette-flow {
+      height: 100px;
+      border-top: 1px solid #e4e4e9; }
+  #my-wrap .diagram-wrap {
+    box-sizing: content-box;
+    flex-grow: 1;
+    height: 470px; }
+
+#palette-cmd {
+  width: 100%;
+  height: calc(100% - 22px); }
+
+#palette-flow {
+  width: 100%;
+  height: calc(100% - 22px); }
+
+#myDiagramDiv {
+  width: 100%;
+  height: 100%; }
+
+.btn-bar {
+  box-sizing: border-box;
+  padding-top: 8px; }
+  .btn-bar .fl-button {
+    width: 100px;
+    height: 36px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+  .btn-bar .btn-del {
+    background-color: #F56C6C;
+    color: #ffffff; }
+  .btn-bar .btn-save {
+    background-color: #67C23A;
+    color: #fff; }
+
+#wrap {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); }
+  #wrap .popup-dialog {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 305px;
+    height: 149px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0; }
+    #wrap .popup-dialog .select-area {
+      box-sizing: border-box;
+      height: 97px;
+      padding-top: 12px;
+      text-align: center; }
+      #wrap .popup-dialog .select-area p {
+        margin: 0; }
+    #wrap .popup-dialog .btn-area {
+      box-sizing: border-box;
+      border-top: 1px solid #eeeeee;
+      height: 50px;
+      text-align: center; }
+      #wrap .popup-dialog .btn-area .btn-can {
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+        height: 100%;
+        border-right: 1px solid #eeeeee;
+        cursor: pointer; }
+        #wrap .popup-dialog .btn-area .btn-can p {
+          font-size: 15px;
+          font-family: SourceHanSansSC-Regular,SourceHanSansSC;
+          font-weight: 400;
+          color: #212121;
+          line-height: 22px; }
+      #wrap .popup-dialog .btn-area .btn-con {
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+        height: 100%;
+        cursor: pointer; }
+        #wrap .popup-dialog .btn-area .btn-con p {
+          font-size: 15px;
+          font-family: SourceHanSansSC-Regular,SourceHanSansSC;
+          font-weight: 500;
+          color: #ce8f37;
+          line-height: 22px; }
+
+#my-select {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #fff; }
+
+.wrap-btnarea {
+  box-sizing: content-box;
+  padding: 4px 12px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 999; }
+
+.name-edit {
+  box-sizing: content-box;
+  position: absolute;
+  top: 9px;
+  left: 210px;
+  z-index: 999;
+  height: 20px;
+  overflow: hidden;
+  background-color: rgba(243, 239, 247, 0.8);
+  display: none; }
+  .name-edit .icon-btn {
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    overflow: hidden; }
+    .name-edit .icon-btn img {
+      width: 100%;
+      height: 100%; }
+  .name-edit .name {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: normal;
+    color: #333333; }
+  .name-edit .btn-editname {
+    padding: 2px;
+    border-radius: 2px;
+    color: #333333;
+    font-size: 8px;
+    line-height: 24px;
+    text-align: center; }
+
+/* clear gojs default style */
+.goCXbackground {
+  display: none !important; }
+
+.goCXforeground {
+  display: none !important; }
+
+/*# sourceMappingURL=FlowChart.css.map */
